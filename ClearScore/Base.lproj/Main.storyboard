@@ -1,24 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jhY-fy-cHD">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Score View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ScoreViewController" customModule="ClearScore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTv-BE-iqt" customClass="ScoreView" customModule="ClearScore" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="248" width="414" height="400"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="heB-EI-ZfA">
+                                        <rect key="frame" x="68.5" y="117" width="277" height="166.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your credit score is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoL-Z5-HF5">
+                                                <rect key="frame" x="0.0" y="0.0" width="277" height="20.5"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="yourCreditScoreIsLabel"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score val" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmR-L1-bDy">
+                                                <rect key="frame" x="0.0" y="35.5" width="277" height="95.5"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="scoreLabel"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
+                                                <color key="textColor" red="0.92352443930000006" green="0.86620849369999997" blue="0.60976397989999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="out of maxValue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eff-nH-04r">
+                                                <rect key="frame" x="0.0" y="146" width="277" height="20.5"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="maxScoreLabel"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="heB-EI-ZfA" firstAttribute="centerX" secondItem="QTv-BE-iqt" secondAttribute="centerX" id="2e4-HQ-xe6"/>
+                                    <constraint firstItem="heB-EI-ZfA" firstAttribute="centerY" secondItem="QTv-BE-iqt" secondAttribute="centerY" id="F2j-dg-hUW"/>
+                                    <constraint firstAttribute="height" constant="400" id="P1m-YK-X9v"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygY-a1-DTl" userLabel="ShowDetailsButton">
+                                <rect key="frame" x="7" y="248" width="400" height="400"/>
+                                <accessibility key="accessibilityConfiguration" identifier="maxScoreLabel">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="Tul-c2-c0A"/>
+                                    <constraint firstAttribute="height" constant="400" id="e84-c1-7kf"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                                <connections>
+                                    <action selector="didTapShowDetailsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TiS-TH-Isu"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QTv-BE-iqt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CRC-0z-g4u"/>
+                            <constraint firstItem="QTv-BE-iqt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SHL-ao-WkW"/>
+                            <constraint firstItem="QTv-BE-iqt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UyT-TF-sBB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QTv-BE-iqt" secondAttribute="trailing" id="hEc-vn-zuo"/>
+                            <constraint firstItem="ygY-a1-DTl" firstAttribute="centerX" secondItem="QTv-BE-iqt" secondAttribute="centerX" id="hZy-05-nzK"/>
+                            <constraint firstItem="ygY-a1-DTl" firstAttribute="centerY" secondItem="QTv-BE-iqt" secondAttribute="centerY" id="jCo-fe-uJU"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Pvx-uC-AWt"/>
+                    <connections>
+                        <outlet property="maxScoreValueLabel" destination="eff-nH-04r" id="7H2-yH-5cX"/>
+                        <outlet property="scoreLabel" destination="OmR-L1-bDy" id="Co3-eJ-gde"/>
+                        <outlet property="scoreView" destination="QTv-BE-iqt" id="Wks-zd-OGa"/>
+                        <outlet property="yourCreditScoreIsLabel" destination="NoL-Z5-HF5" id="eez-yA-Dxf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1039.1304347826087" y="84.375"/>
+        </scene>
+        <!--Score Details View Controller-->
+        <scene sceneID="ubR-tj-Bdj">
+            <objects>
+                <viewController storyboardIdentifier="scoreDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mgK-UH-6iZ" customClass="ScoreDetailsViewController" customModule="ClearScore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jk8-b7-425">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="iaX-sj-2Ws">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="scoreBandLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPK-DT-YSM">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="scoreBandLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="clientRefLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5XX-xW-sym">
+                                        <rect key="frame" x="0.0" y="164" width="414" height="162"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="clientRefLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="statusLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsd-lu-H7I">
+                                        <rect key="frame" x="0.0" y="328" width="414" height="162"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="statusLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hasNeverDefaultedLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKm-iG-JfG">
+                                        <rect key="frame" x="0.0" y="492" width="414" height="162"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="hasNeverDefaultedLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="percentageCreditUsedLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24c-5M-kkL">
+                                        <rect key="frame" x="0.0" y="656" width="414" height="162"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="percentageCreditUsedLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eG9-2h-gIH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iaX-sj-2Ws" firstAttribute="top" secondItem="eG9-2h-gIH" secondAttribute="top" id="BEz-ii-tId"/>
+                            <constraint firstItem="eG9-2h-gIH" firstAttribute="bottom" secondItem="iaX-sj-2Ws" secondAttribute="bottom" id="ocP-s7-RPb"/>
+                            <constraint firstItem="iaX-sj-2Ws" firstAttribute="leading" secondItem="eG9-2h-gIH" secondAttribute="leading" id="vw9-lW-zaj"/>
+                            <constraint firstItem="eG9-2h-gIH" firstAttribute="trailing" secondItem="iaX-sj-2Ws" secondAttribute="trailing" id="y6B-Fp-PT7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="clientRefLabel" destination="5XX-xW-sym" id="Xdf-df-6kH"/>
+                        <outlet property="hasEverDefaultedLabel" destination="eKm-iG-JfG" id="9Pf-J8-Ts3"/>
+                        <outlet property="percentageCreditUsedLabel" destination="24c-5M-kkL" id="3iV-Pb-ya5"/>
+                        <outlet property="scoreBandLabel" destination="hPK-DT-YSM" id="Bzu-Bx-POP"/>
+                        <outlet property="statusLabel" destination="gsd-lu-H7I" id="5hJ-3z-Xbh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="69C-Pd-SSr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1914" y="84"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kf6-fb-Qzf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jhY-fy-cHD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bwQ-U5-7Uq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hXa-fx-cfU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1r-b2-CMA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.98550724637681" y="84.375"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
