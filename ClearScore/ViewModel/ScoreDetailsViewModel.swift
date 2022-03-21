@@ -30,6 +30,7 @@ final class ScoreDetailsViewModel {
         self.percentageCreditUsed = percentageCreditUsed
     }
 
+    // MARK: - Methods
     func getScoreBandText() -> String {
         return  "Score band: " + String(scoreBand)
     }
