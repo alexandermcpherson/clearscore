@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTv-BE-iqt" customClass="ScoreView" customModule="ClearScore" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="248" width="414" height="400"/>
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="heB-EI-ZfA">
-                                        <rect key="frame" x="68.5" y="117" width="277" height="166.5"/>
+                                        <rect key="frame" x="11.5" y="67" width="277" height="166.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your credit score is" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoL-Z5-HF5">
                                                 <rect key="frame" x="0.0" y="0.0" width="277" height="20.5"/>
@@ -48,9 +48,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="heB-EI-ZfA" firstAttribute="centerX" secondItem="QTv-BE-iqt" secondAttribute="centerX" id="2e4-HQ-xe6"/>
-                                    <constraint firstItem="heB-EI-ZfA" firstAttribute="centerY" secondItem="QTv-BE-iqt" secondAttribute="centerY" id="F2j-dg-hUW"/>
-                                    <constraint firstAttribute="height" constant="400" id="P1m-YK-X9v"/>
+                                    <constraint firstAttribute="width" constant="300" id="BRk-vB-3mp"/>
+                                    <constraint firstItem="heB-EI-ZfA" firstAttribute="centerX" secondItem="QTv-BE-iqt" secondAttribute="centerX" id="Hw6-IQ-eK1"/>
+                                    <constraint firstItem="heB-EI-ZfA" firstAttribute="centerY" secondItem="QTv-BE-iqt" secondAttribute="centerY" id="IH8-Ji-wb3"/>
+                                    <constraint firstAttribute="height" constant="300" id="Uya-w9-8SV"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygY-a1-DTl" userLabel="ShowDetailsButton">
@@ -58,10 +59,6 @@
                                 <accessibility key="accessibilityConfiguration" identifier="showDetailsButton">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="Tul-c2-c0A"/>
-                                    <constraint firstAttribute="height" constant="400" id="e84-c1-7kf"/>
-                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
                                 <connections>
@@ -72,12 +69,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="QTv-BE-iqt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CRC-0z-g4u"/>
-                            <constraint firstItem="QTv-BE-iqt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SHL-ao-WkW"/>
-                            <constraint firstItem="QTv-BE-iqt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UyT-TF-sBB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QTv-BE-iqt" secondAttribute="trailing" id="hEc-vn-zuo"/>
-                            <constraint firstItem="ygY-a1-DTl" firstAttribute="centerX" secondItem="QTv-BE-iqt" secondAttribute="centerX" id="hZy-05-nzK"/>
-                            <constraint firstItem="ygY-a1-DTl" firstAttribute="centerY" secondItem="QTv-BE-iqt" secondAttribute="centerY" id="jCo-fe-uJU"/>
+                            <constraint firstItem="ygY-a1-DTl" firstAttribute="centerY" secondItem="QTv-BE-iqt" secondAttribute="centerY" id="KHg-w9-B8V"/>
+                            <constraint firstItem="ygY-a1-DTl" firstAttribute="width" secondItem="QTv-BE-iqt" secondAttribute="width" multiplier="1.33333" id="Nzo-tu-AoH"/>
+                            <constraint firstItem="QTv-BE-iqt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QWT-Rj-fbF"/>
+                            <constraint firstItem="QTv-BE-iqt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a85-cw-mlT"/>
+                            <constraint firstItem="ygY-a1-DTl" firstAttribute="centerX" secondItem="QTv-BE-iqt" secondAttribute="centerX" id="fIG-mb-0cI"/>
+                            <constraint firstItem="ygY-a1-DTl" firstAttribute="height" secondItem="QTv-BE-iqt" secondAttribute="height" multiplier="1.33333" id="fri-kl-5JC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pvx-uC-AWt"/>
