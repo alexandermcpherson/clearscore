@@ -62,7 +62,7 @@ class ScoreViewModelTests: XCTestCase {
     }
 
     func testErrorStringValueIsNilWhenConnectedToNetwork() {
-        XCTAssertNil(scoreViewModel?.error.value)
+        XCTAssertNil(scoreViewModel?.error)
     }
 
 }

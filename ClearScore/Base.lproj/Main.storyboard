@@ -55,8 +55,8 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygY-a1-DTl" userLabel="ShowDetailsButton">
                                 <rect key="frame" x="7" y="248" width="400" height="400"/>
-                                <accessibility key="accessibilityConfiguration" identifier="maxScoreLabel">
-                                    <bool key="isElement" value="NO"/>
+                                <accessibility key="accessibilityConfiguration" identifier="showDetailsButton">
+                                    <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="Tul-c2-c0A"/>

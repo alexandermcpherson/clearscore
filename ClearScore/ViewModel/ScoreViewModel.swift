@@ -16,19 +16,17 @@ final class ScoreViewModel {
 
     // MARK: - Properties
     private let networkService = NetworkService(endpoint: Constants.endpoint)
-    private var score: Int?
-    private var maxScoreValue: Int?
 
     // MARK: - Observables
-    var error: ObservableObject<String?> = ObservableObject(nil)
-    var creditReportInfo: ObservableObject<CreditReportInfo?> = ObservableObject(nil)
+    @Published var error: String?
+    @Published var creditReportInfo: CreditReportInfo?
 
     // MARK: - Init
     init() {
         if NetworkMonitor.shared.isReachable {
             getCreditScore()
         } else {
-            error.value = NetworkError.NotConnectedToNetwork.rawValue
+            error = NetworkError.NotConnectedToNetwork.rawValue
         }
     }
 
@@ -37,36 +35,34 @@ final class ScoreViewModel {
         networkService.getData(object: CreditReport.self) { [weak self] success, object, error in
             if success && error == nil {
                 guard let object = object else { return }
-                self?.creditReportInfo.value = object.creditReportInfo
-                self?.score = self?.creditReportInfo.value?.score
-                self?.maxScoreValue = self?.creditReportInfo.value?.maxScoreValue
+                self?.creditReportInfo = object.creditReportInfo
             } else {
                 if let error = error as? HTTPStatusCode {
-                    self?.error.value = error.description
+                    self?.error = error.description
                 } else if let error = error as? NetworkError {
-                    self?.error.value = error.rawValue
+                    self?.error = error.rawValue
                 } else {
-                    self?.error.value = error?.localizedDescription
+                    self?.error = error?.localizedDescription
                 }
             }
         }
     }
 
     func getScoreNumber() -> Int? {
-        return score
+        return creditReportInfo?.score
     }
 
     func getScoreText() -> String? {
-       guard let scoreText = score else { return nil }
-       return String(scoreText)
+        guard let scoreText = creditReportInfo?.score else { return nil }
+        return String(scoreText)
     }
 
     func getMaxScoreValueNumber() -> Int? {
-        return maxScoreValue
+        return creditReportInfo?.maxScoreValue
     }
 
     func getMaxScoreValueText() -> String? {
-        guard let maxScoreValueText = maxScoreValue else { return nil }
+        guard let maxScoreValueText = creditReportInfo?.maxScoreValue else { return nil }
         return "out of " + String(maxScoreValueText)
     }
 }

@@ -18,11 +18,11 @@ class ScoreDetailsViewModelTests: XCTestCase {
 
         scoreViewModel = ScoreViewModel()
 
-        guard let scoreBand = scoreViewModel.creditReportInfo.value?.scoreBand,
-              let clientRef = scoreViewModel.creditReportInfo.value?.clientRef,
-              let status = scoreViewModel.creditReportInfo.value?.status,
-              let hasEverDefaulted = scoreViewModel.creditReportInfo.value?.hasEverDefaulted,
-              let percentageCreditUsed = scoreViewModel.creditReportInfo.value?.percentageCreditUsed  else { return }
+        guard let scoreBand = scoreViewModel.creditReportInfo?.scoreBand,
+              let clientRef = scoreViewModel.creditReportInfo?.clientRef,
+              let status = scoreViewModel.creditReportInfo?.status,
+              let hasEverDefaulted = scoreViewModel.creditReportInfo?.hasEverDefaulted,
+              let percentageCreditUsed = scoreViewModel.creditReportInfo?.percentageCreditUsed  else { return }
 
         scoreDetailsViewModel = ScoreDetailsViewModel(scoreBand: scoreBand,
                                                       clientRef: clientRef,

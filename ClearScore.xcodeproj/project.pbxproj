@@ -20,7 +20,6 @@
 		7C86DAD627E8893A00808CBA /* ScoreDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86DAD527E8893A00808CBA /* ScoreDetailsViewModelTests.swift */; };
 		7C86DAD927E8CE3A00808CBA /* ScoreDetailsViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86DAD827E8CE3A00808CBA /* ScoreDetailsViewUITests.swift */; };
 		7C86DADB27E8DC1F00808CBA /* ScoreViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86DADA27E8DC1F00808CBA /* ScoreViewUITests.swift */; };
-		7C94440C27D8AFE000F89020 /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C94440B27D8AFE000F89020 /* ObservableObject.swift */; };
 		7C9B40ED27DEA60F005F26BE /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9B40EC27DEA60F005F26BE /* Double+Extension.swift */; };
 		7CA0C1E027E1FADB0079B3CE /* NetworkMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA0C1DF27E1FADB0079B3CE /* NetworkMonitorTests.swift */; };
 		7CB044D527DA40A30029145C /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB044D427DA40A30029145C /* ScoreView.swift */; };
@@ -64,7 +63,6 @@
 		7C86DAD527E8893A00808CBA /* ScoreDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		7C86DAD827E8CE3A00808CBA /* ScoreDetailsViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreDetailsViewUITests.swift; sourceTree = "<group>"; };
 		7C86DADA27E8DC1F00808CBA /* ScoreViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewUITests.swift; sourceTree = "<group>"; };
-		7C94440B27D8AFE000F89020 /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
 		7C9B40EC27DEA60F005F26BE /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		7CA0C1DF27E1FADB0079B3CE /* NetworkMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorTests.swift; sourceTree = "<group>"; };
 		7CB044D427DA40A30029145C /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 				7CFB9CCC27CE35F400F8D949 /* Assets.xcassets */,
 				7CFB9CCE27CE35F400F8D949 /* LaunchScreen.storyboard */,
 				7CFB9CD127CE35F400F8D949 /* Info.plist */,
-				7C94440B27D8AFE000F89020 /* ObservableObject.swift */,
 			);
 			path = ClearScore;
 			sourceTree = "<group>";
@@ -360,7 +357,6 @@
 				7C3BCA9927D7B05A0080420B /* NetworkService.swift in Sources */,
 				7CFB9CC827CE35F200F8D949 /* ScoreViewController.swift in Sources */,
 				7CFB9CC427CE35F200F8D949 /* AppDelegate.swift in Sources */,
-				7C94440C27D8AFE000F89020 /* ObservableObject.swift in Sources */,
 				7C86DAD127E75B7300808CBA /* ScoreDetailsViewController.swift in Sources */,
 				7C86DAD327E78E1A00808CBA /* ScoreDetailsViewModel.swift in Sources */,
 				7C4D6B5D27DF678900691597 /* NetworkMonitor.swift in Sources */,

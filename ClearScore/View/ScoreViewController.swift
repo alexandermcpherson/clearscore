@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class ScoreViewController: UIViewController {
 
@@ -26,6 +27,7 @@ class ScoreViewController: UIViewController {
 
     // MARK: - Properties
     private var scoreViewModel = ScoreViewModel()
+    private var cancellables: Set<AnyCancellable> = []
     private var shownScoreOnce = false
 
     // MARK: - Lifecycle
@@ -62,7 +64,7 @@ class ScoreViewController: UIViewController {
     }
 
     private func setupBinders() {
-        scoreViewModel.creditReportInfo.bind { [weak self] info in
+        scoreViewModel.$creditReportInfo.sink { [weak self] info in
             if info != nil {
                 DispatchQueue.main.async { [weak self] in
                     self?.scoreLabel.text = self?.scoreViewModel.getScoreText()
@@ -77,15 +79,16 @@ class ScoreViewController: UIViewController {
                     self?.showScoreInfo(isHidden: false)
                 }
             }
-        }
-        scoreViewModel.error.bind { [weak self] error in
+        }.store(in: &cancellables)
+
+        scoreViewModel.$error.sink { [weak self] error in
             if error != nil {
                 DispatchQueue.main.async { [weak self] in
                     self?.showScoreInfo(isHidden: true)
                     self?.showInfoAlertWith(Constants.alertErrorTitle, message: error)
                 }
             }
-        }
+        }.store(in: &cancellables)
     }
     
     private func showInfoAlertWith(_ title: String, message: String?) {
@@ -101,7 +104,7 @@ class ScoreViewController: UIViewController {
 
         guard let scoreDetailsVC = storyboard.instantiateViewController(withIdentifier: Constants.scoreDetailsViewControllerName) as? ScoreDetailsViewController else { return }
 
-        scoreViewModel.creditReportInfo.bind { [weak self] info in
+        scoreViewModel.$creditReportInfo.sink { [weak self] info in
             guard let scoreBand = info?.scoreBand,
                   let clientRef = info?.clientRef,
                   let status = info?.status,
@@ -115,7 +118,7 @@ class ScoreViewController: UIViewController {
                                                                          percentageCreditUsed: percentageCreditUsed)
             
             self?.navigationController?.pushViewController(scoreDetailsVC, animated: true)
-        }
+        }.store(in: &cancellables)
     }
 }
 
