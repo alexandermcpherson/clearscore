@@ -40,5 +40,4 @@ class ScoreDetailsViewController: UIViewController, Storyboarded {
         hasEverDefaultedLabel.text = scoreDetailsViewModel?.getHasEverDefaultedText()
         percentageCreditUsedLabel.text = scoreDetailsViewModel?.getPercentaageCreditUsedText()
     }
-
 }

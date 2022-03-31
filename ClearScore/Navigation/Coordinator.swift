@@ -20,8 +20,7 @@ protocol Storyboarded {
 
 extension Storyboarded where Self: UIViewController {
     static func instantiate() -> Self {
-        let fullname = NSStringFromClass(self)
-        let className = fullname.components(separatedBy: ".")[1]
+        let className = String(describing: self)
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         return storyboard.instantiateViewController(withIdentifier: className) as! Self
     }
