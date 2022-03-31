@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jhY-fy-cHD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -11,7 +11,7 @@
         <!--Score View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ScoreViewController" customModule="ClearScore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScoreViewController" id="BYZ-38-t0r" customClass="ScoreViewController" customModule="ClearScore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -92,7 +92,7 @@
         <!--Score Details View Controller-->
         <scene sceneID="ubR-tj-Bdj">
             <objects>
-                <viewController storyboardIdentifier="scoreDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mgK-UH-6iZ" customClass="ScoreDetailsViewController" customModule="ClearScore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScoreDetailsViewController" id="mgK-UH-6iZ" customClass="ScoreDetailsViewController" customModule="ClearScore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jk8-b7-425">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,24 +158,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69C-Pd-SSr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1914" y="84"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="kf6-fb-Qzf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jhY-fy-cHD" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bwQ-U5-7Uq">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hXa-fx-cfU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U1r-b2-CMA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="128.98550724637681" y="84.375"/>
         </scene>
     </scenes>
     <resources>

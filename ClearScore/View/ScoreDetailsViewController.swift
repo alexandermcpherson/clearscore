@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ScoreDetailsViewController: UIViewController {
+class ScoreDetailsViewController: UIViewController, Storyboarded {
 
     // MARK: - Outlets
     @IBOutlet private weak var scoreBandLabel: UILabel!
@@ -17,6 +17,7 @@ class ScoreDetailsViewController: UIViewController {
     @IBOutlet private weak var percentageCreditUsedLabel: UILabel!
 
     // MARK: - Properties
+    weak var coordinator: MainCoordinator?
     var scoreDetailsViewModel: ScoreDetailsViewModel?
 
     // MARK: - Constants

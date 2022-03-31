@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class ScoreViewController: UIViewController {
+class ScoreViewController: UIViewController, Storyboarded {
 
     // MARK: - Outlets
     @IBOutlet private weak var scoreView: ScoreView!
@@ -21,11 +21,10 @@ class ScoreViewController: UIViewController {
         static let navTitle = "Dashboard"
         static let okAlertButtonTitle = "OK"
         static let alertErrorTitle = "Error"
-        static let mainStoryboardName = "Main"
-        static let scoreDetailsViewControllerName = "scoreDetailsViewController"
     }
 
     // MARK: - Properties
+    weak var coordinator: MainCoordinator?
     private var scoreViewModel = ScoreViewModel()
     private var cancellables: Set<AnyCancellable> = []
     private var shownScoreOnce = false
@@ -39,7 +38,6 @@ class ScoreViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         // Lets not hide the UI for consecutive reloading of this view i.e coming back from the details view.
         showScoreInfo(isHidden: shownScoreOnce ? false : true)
     }
@@ -100,10 +98,6 @@ class ScoreViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func didTapShowDetailsButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: Constants.mainStoryboardName, bundle: nil)
-
-        guard let scoreDetailsVC = storyboard.instantiateViewController(withIdentifier: Constants.scoreDetailsViewControllerName) as? ScoreDetailsViewController else { return }
-
         scoreViewModel.$creditReportInfo.sink { [weak self] info in
             guard let scoreBand = info?.scoreBand,
                   let clientRef = info?.clientRef,
@@ -111,13 +105,13 @@ class ScoreViewController: UIViewController {
                   let hasEverDefaulted = info?.hasEverDefaulted,
                   let percentageCreditUsed = info?.percentageCreditUsed else { return }
 
-            scoreDetailsVC.scoreDetailsViewModel = ScoreDetailsViewModel(scoreBand: scoreBand,
+            let scoreDetailsViewModel = ScoreDetailsViewModel(scoreBand: scoreBand,
                                                                          clientRef: clientRef,
                                                                          status: status,
                                                                          hasEverDefaulted: hasEverDefaulted,
                                                                          percentageCreditUsed: percentageCreditUsed)
             
-            self?.navigationController?.pushViewController(scoreDetailsVC, animated: true)
+            self?.coordinator?.scoreInfo(scoreDetailsViewModel: scoreDetailsViewModel)
         }.store(in: &cancellables)
     }
 }

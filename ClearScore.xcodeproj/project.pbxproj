@@ -24,6 +24,8 @@
 		7CA0C1E027E1FADB0079B3CE /* NetworkMonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA0C1DF27E1FADB0079B3CE /* NetworkMonitorTests.swift */; };
 		7CB044D527DA40A30029145C /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB044D427DA40A30029145C /* ScoreView.swift */; };
 		7CB044D927DA41210029145C /* ScoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB044D827DA41210029145C /* ScoreView.xib */; };
+		7CE7E4A527F5ACCF005669F4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE7E4A427F5ACCF005669F4 /* Coordinator.swift */; };
+		7CE7E4A727F5B09C005669F4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE7E4A627F5B09C005669F4 /* MainCoordinator.swift */; };
 		7CFB9CC427CE35F200F8D949 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB9CC327CE35F200F8D949 /* AppDelegate.swift */; };
 		7CFB9CC627CE35F200F8D949 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB9CC527CE35F200F8D949 /* SceneDelegate.swift */; };
 		7CFB9CC827CE35F200F8D949 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFB9CC727CE35F200F8D949 /* ScoreViewController.swift */; };
@@ -67,6 +69,8 @@
 		7CA0C1DF27E1FADB0079B3CE /* NetworkMonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorTests.swift; sourceTree = "<group>"; };
 		7CB044D427DA40A30029145C /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		7CB044D827DA41210029145C /* ScoreView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScoreView.xib; sourceTree = "<group>"; };
+		7CE7E4A427F5ACCF005669F4 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		7CE7E4A627F5B09C005669F4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		7CFB9CC027CE35F200F8D949 /* ClearScore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClearScore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CFB9CC327CE35F200F8D949 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CFB9CC527CE35F200F8D949 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,9 +138,9 @@
 		7CB044D127DA025B0029145C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7C86DAD727E8A37D00808CBA /* Donut ScoreView */,
 				7CFB9CC727CE35F200F8D949 /* ScoreViewController.swift */,
 				7C86DAD027E75B7200808CBA /* ScoreDetailsViewController.swift */,
+				7C86DAD727E8A37D00808CBA /* Donut ScoreView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +161,15 @@
 				7C4D6B5C27DF678900691597 /* NetworkMonitor.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		7CE7E4A327F5AA27005669F4 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7CE7E4A427F5ACCF005669F4 /* Coordinator.swift */,
+				7CE7E4A627F5B09C005669F4 /* MainCoordinator.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		7CFB9CB727CE35F200F8D949 = {
@@ -185,6 +198,7 @@
 				7CB044D027DA02520029145C /* Model */,
 				7CB044D127DA025B0029145C /* View */,
 				7CB044D227DA02640029145C /* ViewModel */,
+				7CE7E4A327F5AA27005669F4 /* Navigation */,
 				7C9B40EB27DEA5B7005F26BE /* Extensions */,
 				7CB044D327DA02880029145C /* Services */,
 				7CFB9CC327CE35F200F8D949 /* AppDelegate.swift */,
@@ -359,7 +373,9 @@
 				7CFB9CC427CE35F200F8D949 /* AppDelegate.swift in Sources */,
 				7C86DAD127E75B7300808CBA /* ScoreDetailsViewController.swift in Sources */,
 				7C86DAD327E78E1A00808CBA /* ScoreDetailsViewModel.swift in Sources */,
+				7CE7E4A527F5ACCF005669F4 /* Coordinator.swift in Sources */,
 				7C4D6B5D27DF678900691597 /* NetworkMonitor.swift in Sources */,
+				7CE7E4A727F5B09C005669F4 /* MainCoordinator.swift in Sources */,
 				7CFB9CC627CE35F200F8D949 /* SceneDelegate.swift in Sources */,
 				7C3BCA9727D7AFF90080420B /* ScoreViewModel.swift in Sources */,
 			);
@@ -552,7 +568,6 @@
 				INFOPLIST_FILE = ClearScore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -581,7 +596,6 @@
 				INFOPLIST_FILE = ClearScore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
